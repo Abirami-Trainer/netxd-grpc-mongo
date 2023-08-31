@@ -1,0 +1,20 @@
+syntax="proto3";
+option go_package="https://github.com/Abirami-Ganesh/Netxd_Customer.git";
+package netxd_grpc_mongo_proto;
+service CustomerService{
+    rpc CreateCustomer(Customer) returns (CustomerResponse);
+}
+message Customer{
+    string CustomerId=1;
+    string FirstName=2;
+    string LastName=3;
+    string BankId=4;
+    float Balance=5;
+    string CreatedAt=6;
+    string UpdatedAt=7;
+    bool IsActive=8; 
+}
+message CustomerResponse{
+    string CustomerId=1;
+    string CreatedAt=2;
+}
